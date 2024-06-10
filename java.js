@@ -127,7 +127,7 @@ const jobLocation = document.getElementById("jobLocation");
 const job = document.getElementById("job");
 const button = document.getElementById("button");
 const stampa = document.getElementById("stampa");
-const totalCount = document.getElementById('totalCount');
+const totalCount = document.getElementById("totalCount");
 
 let count = 1;
 
@@ -140,17 +140,17 @@ function search() {
       (jobLocationValue === "" ||
         job.location.toLowerCase().includes(jobLocationValue)) &&
       (jobValue === "" || job.title.toLowerCase().includes(jobValue))
-);
+  );
 
   if (result.length === 0) {
-    stampa.innerText = 'not found'
+    stampa.innerText = "not found";
   } else {
-    result.forEach( resultFinded => {
-      let countResult = count++
-      const resultDiv = document.createElement('div');
-      resultDiv.innerText = `${resultFinded.location} ${resultFinded.title}`
+    result.forEach((resultFinded) => {
+      let countResult = count++;
+      const resultDiv = document.createElement("div");
+      resultDiv.innerText = `${resultFinded.location} ${resultFinded.title}`;
       stampa.appendChild(resultDiv);
-      totalCount.innerText= countResult 
+      totalCount.innerText =`Result founded  ${countResult}`
     });
   }
 }
